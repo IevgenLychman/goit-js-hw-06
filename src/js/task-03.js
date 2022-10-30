@@ -12,3 +12,19 @@ const images = [
     alt: "Group of Horses Running",
   },
 ];
+
+const galleryEl = document.querySelector(".gallery");
+
+const addFoto = images.map((image) => {
+  const fotoList = document.createElement("img");
+  fotoList.src = image.url;
+  fotoList.alt = image.alt;
+  fotoList.width = 640;
+  fotoList.style.display = "grid";
+  fotoList.style.padding = "20px";
+  return fotoList;
+});
+
+galleryEl.append(...addFoto);
+
+console.log(addFoto);

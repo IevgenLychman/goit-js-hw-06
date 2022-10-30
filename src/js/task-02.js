@@ -7,7 +7,7 @@ const ingredients = [
   "Condiments",
 ];
 
-const ind = document.querySelector("#ingredients");
+const ingredientsEl = document.querySelector("#ingredients");
 
 const addIngredients = ingredients.map((ingredient) => {
   const ingredientsList = document.createElement("li");
@@ -16,6 +16,6 @@ const addIngredients = ingredients.map((ingredient) => {
   return ingredientsList;
 });
 
-ind.append(...addIngredients);
+ingredientsEl.append(...addIngredients);
 
 console.log(addIngredients);
