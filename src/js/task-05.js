@@ -3,17 +3,10 @@ const refs = {
   outputName: document.querySelector("#name-output"),
 };
 
-// const wtf = (event) => {
-//   refs.outputName.textContent = event.currentTarget.value;
-// };
-
-// refs.inputName.addEventListener("input", wtf);
-
-const wtf = (event) => {
-  refs.inputName === ""
-    ? (refs.outputName.textContent = "Anon")
+const onInputName = (event) => {
+  refs.inputName.value.length === 0
+    ? (refs.outputName.textContent = "Anonymous")
     : (refs.outputName.textContent = event.currentTarget.value);
 };
-console.log(refs.outputName);
 
-refs.inputName.addEventListener("input", wtf);
+refs.inputName.addEventListener("input", onInputName);
