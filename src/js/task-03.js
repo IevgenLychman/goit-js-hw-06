@@ -13,18 +13,29 @@ const images = [
   },
 ];
 
-const galleryEl = document.querySelector(".gallery");
+// const galleryEl = document.querySelector(".gallery");
 
-const addFoto = images.map((image) => {
-  const fotoList = document.createElement("img");
-  fotoList.src = image.url;
-  fotoList.alt = image.alt;
-  fotoList.width = 640;
-  fotoList.style.display = "grid";
-  fotoList.style.padding = "20px";
+// const addFoto = images.map((image) => {
+//   const fotoList = document.createElement("img");
+//   fotoList.src = image.url;
+//   fotoList.alt = image.alt;
+//   fotoList.width = 640;
+//   fotoList.style.display = "grid";
+//   fotoList.style.padding = "20px";
+//   return fotoList;
+// });
+
+// // galleryEl.append(...addFoto);
+
+const galleryEl = document.querySelector(".gallery");
+const galleryItemEl = images.map((element) => {
+  const fotoList = `<li class = image> <img
+src=${element.url} alt=${element.alt}
+width = 640px>
+</li>`;
   return fotoList;
 });
+galleryEl.style.listStyle = "none";
+galleryEl.style.padding = "50px";
 
-galleryEl.append(...addFoto);
-
-console.log(addFoto);
+galleryEl.insertAdjacentHTML("beforeend", galleryItemEl.join(""));

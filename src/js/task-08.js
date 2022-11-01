@@ -1,27 +1,15 @@
-const refs = {
-  inputField: document.querySelectorAll("input"),
-  btn: document.querySelector("button"),
-};
+const chekingForm = document.querySelector("form");
 
-// function alert(event) {
-//   event.preventDefault();
-//   const wtf = () => {
-//     if (refs.inputField.value.length === "") {
-//       alert("fuck");
-//     }
-//   };
-// }
+chekingForm.addEventListener("submit", formToChek);
 
-function handleSubmit(event) {
+function formToChek(event) {
   event.preventDefault();
   const {
-    elements: { login, password }
+    elements: { email, password },
   } = event.currentTarget;
 
-  if (login.value === "" || password.value === "") {
-    return console.log("Please fill in all the fields!");
+  if (email.value === "" || password.value === "") {
+    return alert("Будь ласка заповніть всі поля!");
   }
-
-refs.btn.addEventListener("submit", alert);
-
-console.log(refs.btn);
+  event.currentTarget.reset();
+}

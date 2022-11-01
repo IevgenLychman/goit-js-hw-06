@@ -4,7 +4,7 @@ const refs = {
 };
 
 const wtf = () => {
-  refs.inputField.value.length >= refs.inputLength
+  refs.inputField.value.length === Number(refs.inputLength)
     ? (refs.inputField.classList.add("valid"),
       refs.inputField.classList.remove("invalid"))
     : (refs.inputField.classList.remove("valid"),
