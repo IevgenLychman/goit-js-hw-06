@@ -3,7 +3,7 @@ const refs = {
   inputLength: document.querySelector("input").getAttribute("data-length"),
 };
 
-const wtf = () => {
+const inputCheckContent = () => {
   refs.inputField.value.length === Number(refs.inputLength)
     ? (refs.inputField.classList.add("valid"),
       refs.inputField.classList.remove("invalid"))
@@ -11,4 +11,4 @@ const wtf = () => {
       refs.inputField.classList.add("invalid"));
 };
 
-refs.inputField.addEventListener("blur", wtf);
+refs.inputField.addEventListener("blur", inputCheckContent);
